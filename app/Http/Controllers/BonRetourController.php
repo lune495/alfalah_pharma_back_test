@@ -21,8 +21,8 @@ class BonRetourController extends Controller
                 $user = Auth::user();
                 DB::beginTransaction();
                 $item->nom_client = $request->nom_client;
-                //$item->user_id = $user->id;
-                $item->user_id = 2;
+                $item->user_id = $user->id;
+                // $item->user_id = 2;
                 $str_json = json_encode($request->details);
                 $details = json_decode($str_json, true);
                 if (!isset($errors)) 
